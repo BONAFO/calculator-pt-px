@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .cont {
+            margin: 3% 0%;
+            border: 2px solid #ff722c;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .label {
+            font-size: 2vh;
+            color: #ff722c;
+        }
+
+        .input {
+            border: 2px solid #ff722c;
+            margin-bottom: 2%;
+            margin-left: 2%;
+            font-size: 2.5vh;
+            background-color: transparent;
+            color: #ff722c;
+        }
+
+        .button {
+            margin-left: 2%;
+            font-size: 2.5vh;
+            border: 2px solid #ff722c;
+            background-color: transparent;
+            color: #ff722c;
+            cursor: pointer;
+            transition: background-color .3s, color .3s;
+        }
+
+        .button:hover {
+            color: #000000;
+            background-color: #ff722c;
+        }
+    </style>
+
+    <div class="cont">
+        <h3 class="label">PT=> PX</h3>
+        <input class="input" id="input-pt" type="number" name="" placeholder="PPTs" id="">
+        <br>
+        <button id="calculate-pt" class="button">CALCULATE</button>
+        <h3 id="result-pt" class="label">RESULT => </h3>
+    </div>
+    <div class="cont">
+        <h3 class="label">PX=> PT</h3>
+        <input class="input" id="input-px" type="number" name="" placeholder="PXs" id="">
+        <br>
+        <button id="calculate-px" class="button">CALCULATE</button>
+        <h3 id="result-px" class="label">RESULT => </h3>
+    </div>
+
+
+
+    <script>
+        document.getElementById("calculate-px").onclick=()=>{
+            const label = document.getElementById("result-px");
+            label.textContent= `RESULT => ${parseInt(document.getElementById("input-px").value) * 1.33} px`;
+        }
+        document.getElementById("calculate-pt").onclick=()=>{
+            const label = document.getElementById("result-pt");
+            label.textContent= `RESULT => ${parseInt(document.getElementById("input-pt").value) / 1.33} pt`;
+        }
+
+    </script>
+</body>
+
+</html>
